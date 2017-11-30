@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tab</title>
+    <style>
+        body {
+            font-family: "Microsoft YaHei";
+        }
+    
+        #tab {
+            width: 600px;
+            margin: 0 auto;
+        }
+    
+        .tab-tit {
+            font-size: 0;
+            width: 600px;
+        }
+    
+        .tab-tit a {
+            display: inline-block;
+            height: 40px;
+            line-height: 40px;
+            font-size: 16px;
+            width: 25%;
+            text-align: center;
+            background: #ccc;
+            color: #333;
+            text-decoration: none;
+        }
+    
+        .tab-tit .cur {
+            background: #09f;
+            color: #fff;
+        }
+    
+        .tab-con div {
+            border: 1px solid #ccc;
+            height: 400px;
+            padding-top: 20px;
+            display: none;
+        }
+        .tab-con div.cur {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="tab">
+        <div class="tab-tit">
+            <a href="javascript:;" v-on:click="curId=0" v-bind:class="{'cur':curId === 0}">水果</a>
+            <a href="javascript:;" v-on:click="curId=1" v-bind:class="{'cur':curId === 1}">零食</a>
+            <a href="javascript:;" v-on:click="curId=2" v-bind:class="{'cur':curId === 2}">日用品</a>
+            <a href="javascript:;" v-on:click="curId=3" v-bind:class="{'cur':curId === 3}">吃的</a>
+        </div>
+        <div class="tab-con">
+            <div v-bind:class="{'cur':curId === 0}">
+                水果
+            </div>
+            <div v-bind:class="{'cur':curId === 1}">
+                零食
+            </div>
+            <div v-bind:class="{'cur':curId === 2}">
+                日用品
+            </div>
+            <div v-bind:class="{'cur':curId === 3}">
+                吃的
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="../vue.js"></script>
+    <script src="tab.js"></script>
+</body>
+</html>
